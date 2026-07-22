@@ -57,3 +57,44 @@
 # Joint Account: 1200 euros
 # True
 # Peter: 300 euros
+
+class BankAccount:
+    def __init__(self, name: str, balance: float):
+        self.__name=name
+        self.__balance=balance
+
+    def deposit(self, amount: float):
+        self.__balance+=amount
+
+    def withdraw(self, amount: float):
+        if self.__balance-amount<0:
+            raise ValueError ("Insufficient Balance")
+        if amount<0:
+            raise ValueError ("Withdraw amount can not be 0 or -ve")
+        
+        self.__balance-=amount
+
+    def __str__(self):
+        return (f"{self.__name}: {self.__balance} euros")
+    
+    def __add__(self, other):
+        return BankAccount("Joint Account", self.__balance+other.__balance)
+
+    def __gt__(self, other):
+        return self.__balance>other.__balance
+
+def main():
+
+    a1 = BankAccount("Peter", 500)
+    a2 = BankAccount("Maria", 700)
+
+    joint = a1 + a2
+
+    print(joint)
+    print(a2 > a1)
+
+    a1.withdraw(200)
+    print(a1)
+if __name__=="__main__":
+    main()
+    

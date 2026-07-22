@@ -45,8 +45,7 @@ class Product:
         self.__price=price
 
     def discount(self, percent: int):
-        disc_price = self.__price-(self.__price*percent)
-        return disc_price
+        self.__price -= self.__price*percent/100
     
     def is_expensive(self):
         return self.__price>1000

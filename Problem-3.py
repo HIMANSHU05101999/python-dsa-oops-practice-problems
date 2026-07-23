@@ -77,10 +77,10 @@ class BankAccount:
     def __str__(self):
         return (f"{self.__name}: {self.__balance} euros")
     
-    def __add__(self, other):
+    def __add__(self, other: BankAccount):
         return BankAccount("Joint Account", self.__balance+other.__balance)
 
-    def __gt__(self, other):
+    def __gt__(self, other: BankAccount):
         return self.__balance>other.__balance
 
 def main():

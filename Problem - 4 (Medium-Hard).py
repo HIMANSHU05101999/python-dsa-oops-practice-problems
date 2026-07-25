@@ -96,11 +96,10 @@ class Library:
             return None
         for book in self.__books:
             if book.name==name:
-                self.__books.remove(name)
+                self.__books.remove(book)
                 break
+
     def total_pages(self):
-        if not self.__books:
-            return None
         return sum(book.pages for book in self.__books)
 
     def find_book(self, name: str):
@@ -108,9 +107,8 @@ class Library:
             return None
         for book in self.__books:
             if book.name==name:
-                return book
-            else:
-                return None
+                return book    
+        return None
 
 def main():
     library = Library("City Library")

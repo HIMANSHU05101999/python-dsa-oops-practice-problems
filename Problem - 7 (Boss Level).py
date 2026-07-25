@@ -109,6 +109,8 @@ class ShoppingCart:
         return total
 
     def most_expensive(self):
+        if not self._cart:
+            return None
         most_exp=self._cart[0]
         for product in self._cart:
             if most_exp.price<product.price:
@@ -118,7 +120,7 @@ class ShoppingCart:
     def view_items(self):
         return self._cart
 
-    def __add__(self, other: Product):
+    def __add__(self, other: "ShoppingCart"):
         merged_cart=ShoppingCart("Merged Cart")
         combined_cart=self._cart + other._cart
         for product in combined_cart:

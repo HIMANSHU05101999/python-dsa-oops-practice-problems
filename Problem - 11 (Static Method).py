@@ -33,7 +33,7 @@ class Calculator:
     def subtract(a, b):
         return a-b
     @staticmethod
-    def multply(a, b):
+    def multiply(a, b):
         return a*b
     @staticmethod
     def divide(a, b):

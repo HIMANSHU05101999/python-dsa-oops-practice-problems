@@ -24,3 +24,26 @@
 #
 # 15
 # 5
+
+class Calculator:
+    @staticmethod
+    def add(a, b):
+        return a+b
+    @staticmethod
+    def subtract(a, b):
+        return a-b
+    @staticmethod
+    def multply(a, b):
+        return a*b
+    @staticmethod
+    def divide(a, b):
+        if b==0:
+            raise ValueError
+        return a/b
+
+def main():
+    print(Calculator.add(10,5))
+    print(Calculator.divide(20,4))
+
+if __name__=="__main__":
+    main()

@@ -54,3 +54,47 @@
 #
 # 3
 # BMW
+
+class Vehicle:
+    next_registration = 1000
+    count=0
+    registry={}
+
+    def __init__(self, name):
+        self._name=name
+        Vehicle.count+=1
+        Vehicle.registry[Vehicle.next_registration]=self
+        Vehicle.next_registration+=1
+
+    def __str__(self):
+        return f"{self._name}"
+    
+    @classmethod
+    def total_registered(cls):
+        return cls.count
+
+    @classmethod
+    def get_vehicle(cls, reg_no):
+        return cls.registry[reg_no]
+
+
+class Car(Vehicle):
+    def __init__(self, name):
+        super().__init__(name)
+
+
+class Bike(Vehicle):
+    def __init__(self, name):
+        super().__init__(name)
+        
+
+def main():
+    c1 = Car("Tesla")
+    c2 = Car("BMW")
+    b1 = Bike("Yamaha")
+
+    print(Vehicle.total_registered())
+
+    print(Vehicle.get_vehicle(1001))
+if __name__=="__main__":
+    main()

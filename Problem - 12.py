@@ -76,6 +76,9 @@ def main():
 
     print(a.yearly_interest())
 
+    BankAccount.change_interest_rate(12)
+
+    print(a.yearly_interest())
 if __name__=="__main__":
     main()
     

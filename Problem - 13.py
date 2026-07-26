@@ -32,3 +32,24 @@
 # Sample output:
 #
 # ['Dog', 'Cat', 'Cow']
+
+class Animal:
+    registry=[]
+
+    def __init__(self, name: str):
+        type(self).registry.append(name)
+    
+
+    @classmethod
+    def all_animals(cls):
+        return cls.registry
+
+def main():
+
+    Animal("Dog")
+    Animal("Cat")
+    Animal("Cow")
+    print(Animal.all_animals())
+
+if __name__=="__main__":
+    main()

@@ -77,8 +77,8 @@ class Company:
         if emp_id in self.__employees:
             if emp_obj.emp_salary>self.__employees[emp_id].emp_salary:
                 self.__employees[emp_id]=emp_obj
-
-        self.__employees[emp_id]=emp_obj
+        else:
+            self.__employees[emp_id]=emp_obj
 
     def search_employee(self,emp_id):
         if emp_id in self.__employees:

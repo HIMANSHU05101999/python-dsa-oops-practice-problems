@@ -179,7 +179,7 @@ class University:
         stat={}
         print(f"Total Students: {len(self.__students)}")
         print(f"Total Courses: {len(self.__course)}")
-        print(f"Average GPA: {sum(enrol.grade for enrol in self.__enroll.values())/len(self.__students)}")
+        #print(f"Average GPA: {sum(enrol.grade for enrol in self.__enroll.values())/len(self.__students)}")
         for enrol in self.__enroll.values():
             if enrol.grade not in stat:
                 stat[enrol.grade]="x"

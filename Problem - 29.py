@@ -31,3 +31,12 @@
 # Do NOT use sum().
 #
 # WRITE YOUR SOLUTION BELOW:
+
+def list_sum(ls: list):
+    if not ls:
+        return 0
+
+    return list_sum(ls[1:])+ls[0]
+
+if __name__=="__main__":
+    print(list_sum([1,2,3,4,5,6]))

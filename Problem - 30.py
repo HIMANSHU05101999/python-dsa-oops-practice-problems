@@ -34,3 +34,15 @@
 # Do NOT use "in".
 #
 # WRITE YOUR SOLUTION BELOW:
+
+def contains(ls,trg):
+    if not ls:
+        return False
+
+    if ls[0]==trg:
+        return True
+    return contains(ls[1:],trg)
+
+if __name__=="__main__":
+    print(contains([4, 7, 2, 9], 2))
+    print(contains([4, 7, 2, 9], 5))

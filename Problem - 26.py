@@ -31,3 +31,14 @@
 # - loops
 #
 # WRITE YOUR SOLUTION BELOW:
+
+def rev_str(string: str):
+    if string=="":
+        return ""
+
+    return rev_str(string[1:]) + string[0]
+
+
+if __name__=="__main__":
+    string=input("Enter the string")
+    print(rev_str(string))

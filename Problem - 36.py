@@ -43,9 +43,7 @@ def find_node(node, target):
     if node.val==target:
         return True
     
-    return find_node(node.next,target)
-    
-    
+    return find_node(node.next,target)   
 
 if __name__=="__main__":
     node1 = Node(10)

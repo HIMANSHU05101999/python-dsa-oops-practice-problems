@@ -54,13 +54,13 @@ def balanced_brackets(string):
     return False
 
 if __name__=="__main__":
-#    print(balanced_brackets("([[]])"))
+    print(balanced_brackets("([[]])"))
 
 
-#    print(balanced_brackets("([])"))
+    print(balanced_brackets("([])"))
 
 
-#    print(balanced_brackets("([)]"))
+    print(balanced_brackets("([)]"))
 
 
     print(balanced_brackets("([bad])"))

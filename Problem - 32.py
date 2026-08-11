@@ -45,3 +45,19 @@
 # 5. Recursively check the remaining string
 #
 # WRITE YOUR SOLUTION BELOW:
+
+def balanced_parentheses(string):
+    if string=="":
+        return True
+
+
+    if string[0]=="(" and string[-1]==")":
+        return balanced_parentheses(string[1:-1])
+    return False
+
+if __name__=="__main__":
+    print(balanced_parentheses("((()))"))
+    print(balanced_parentheses("()"))
+    print(balanced_parentheses("(()())"))
+    print(balanced_parentheses("())"))
+    print(balanced_parentheses(")("))

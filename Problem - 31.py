@@ -33,3 +33,20 @@
 # Do NOT use max().
 #
 # WRITE YOUR SOLUTION BELOW:
+
+def recursive_max(ls: list):
+    if len(ls)==1:
+        return ls[0]
+
+    a=recursive_max(ls[1:])
+
+    if ls[0]>a:
+        return ls[0]
+    return a
+        
+        
+        
+    
+    
+if __name__=="__main__":
+    print(recursive_max([4, 50, 2, 10, 3]))

@@ -42,7 +42,6 @@ def count_char(string, char):
         return count_char(string[1:],char)+1
     return count_char(string[1:],char)
     
-    
 
 if __name__=="__main__":
     string=input("Enter string")

@@ -40,3 +40,27 @@
 # remove them and recursively check the inside.
 #
 # WRITE YOUR SOLUTION BELOW:
+def balanced_brackets(string):
+    for char in string:
+        if char not in "()[]":
+            string=string.replace(char,"")
+        
+
+    if string == "":
+        return True
+
+    if string[0]=="(" and string[-1]==")" or string[0]=="[" and string[-1]=="]":
+        return balanced_brackets(string[1:-1])
+    return False
+
+if __name__=="__main__":
+#    print(balanced_brackets("([[]])"))
+
+
+#    print(balanced_brackets("([])"))
+
+
+#    print(balanced_brackets("([)]"))
+
+
+    print(balanced_brackets("([bad])"))

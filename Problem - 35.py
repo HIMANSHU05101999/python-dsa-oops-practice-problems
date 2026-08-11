@@ -28,3 +28,23 @@
 #     1 + length of the remaining list
 #
 # WRITE YOUR SOLUTION BELOW:
+
+class Node:
+    def __init__(self, val, next=None):
+        self.val=val
+        self.next=next
+
+def print_length_nodes(node):
+    if node == None:
+        return 0
+    return print_length_nodes(node.next) + 1
+
+if __name__=="__main__":
+    node1 = Node(10)
+    node2 = Node(20)
+    node3 = Node(30)
+
+    node1.next = node2
+    node2.next = node3
+
+    print(print_length_nodes(node1))

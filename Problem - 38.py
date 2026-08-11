@@ -45,7 +45,6 @@ class Node:
 def count_node(node: Node):
     if node==None:
         return 0
-
     sum_node=1+count_node(node.left)+count_node(node.right)
     return sum_node
 

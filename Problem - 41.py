@@ -41,3 +41,36 @@
 # for tree algorithms.
 #
 # WRITE YOUR SOLUTION BELOW:
+
+class Node:
+    def __init__(self, value, left=None, right=None):
+        self.value=value
+        self.left=left
+        self.right=right
+
+def tree_contains(node: Node, tagret):
+    result1=False
+    result2=False
+    if node==None:
+        return False
+    if node.value==tagret:
+        return True
+    
+    if node.left:
+        result1=tree_contains(node.left,tagret)
+    if result1==False:
+        result2=tree_contains(node.right,tagret)
+
+    if result1==True or result2==True:
+        return True
+    return False
+    
+    
+if __name__=="__main__":
+    root=Node(10)
+    root.left=Node(5)
+    root.left.left=Node(2)
+    root.left.right=Node(7)
+    root.right=Node(15)
+
+    print(tree_contains(root,12))

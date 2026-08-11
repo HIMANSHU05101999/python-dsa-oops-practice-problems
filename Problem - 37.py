@@ -58,9 +58,7 @@ def print_node(root):
     if root.left:
         print_node(root.left)
         
-
     if root.right:
-        
         print_node(root.right)
 
     

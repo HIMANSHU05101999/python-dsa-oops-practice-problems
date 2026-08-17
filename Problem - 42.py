@@ -33,3 +33,33 @@
 # 3. Recursively visit right
 #
 # WRITE YOUR SOLUTION BELOW:
+
+class Node:
+    def __init__(self, value, left=None, right=None):
+        self.value=value
+        self.left=left
+        self.right=right
+
+def inorder(root):
+    if root == None:
+        return
+
+    if root.left:
+        inorder(root.left)
+        
+    print(root.value)
+
+    if root.right:
+        inorder(root.right)
+
+    
+
+
+if __name__=="__main__":
+    root=Node(10)
+    root.left=Node(5)
+    root.left.left=Node(2)
+    root.left.right=Node(7)
+    root.right=Node(15)
+
+    inorder(root)

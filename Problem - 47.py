@@ -56,3 +56,28 @@
 # Which information belongs to the Employee CLASS?
 #
 # ============================================================
+
+class Employee:
+    count=0
+
+    def __init__(self,name):
+        self.__name=name
+        self.__id=Employee.count+1
+        Employee.count+=1
+
+    def __str__(self):
+        return f"Name: {self.__name} ID: {self.__id}"
+
+    @classmethod
+    def total_emp_created(cls):
+        return cls.count
+    
+if __name__=="__main__":
+    a=Employee("a")
+    b=Employee("b")
+    print(a)
+    print(b)
+
+    print(Employee.total_emp_created())
+
+    

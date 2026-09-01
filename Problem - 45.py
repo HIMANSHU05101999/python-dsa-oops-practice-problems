@@ -83,7 +83,6 @@ class Employee:
 
 def max_salary(emp_obj: "Employee"):
     max_sal=emp_obj.salary
-    employee=emp_obj  
     abc=0
     if not emp_obj.subordinates:
         return emp_obj.salary
@@ -110,7 +109,7 @@ if __name__=="__main__":
     emily.add_subordinate(eric)
     emily.add_subordinate(mathew)
 
-    print(max_salary(emily))
+    print(max_salary(sally))
 
 
 

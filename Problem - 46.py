@@ -80,13 +80,6 @@ def check_employee(emp_obj: "Employee", target):
         temp=check_employee(emp,target)
         if temp:
             return temp
-        
-
-        
-    
-        
-    
-
 
 if __name__=="__main__":
     sally=Employee("Sally")

@@ -40,3 +40,53 @@
 # - return values
 #
 # ============================================================
+
+class File:
+    def __init__(self, name, size):
+        self.__name=name
+        self.__size=size
+
+    @property
+    def size(self):
+        return self.__size
+
+class Folder:
+    def __init__(self, name):
+        self.__name=name
+        self.__contents=[]
+
+    @property
+    def contents(self):
+        return self.__contents
+
+    def add_fobj(self, obj):
+        self.__contents.append(obj)
+
+def total_size(obj):
+    temp=0
+
+    if isinstance(obj, File):
+        return obj.size
+
+    for item in obj.contents:
+        temp+=total_size(item)
+    return temp
+
+if __name__=="__main__":
+    project=Folder("Project")
+    python=Folder("Python")
+
+    main_py=File("Main.py", 10)
+    test_py=File("Test.py", 20)
+    app_py=File("app.py", 30)
+    data_csv=File("Data.csv", 40)
+
+    project.add_fobj(main_py)
+    project.add_fobj(test_py)
+    project.add_fobj(python)
+
+    python.add_fobj(app_py)
+    python.add_fobj(data_csv)
+
+    print(total_size(project))
+
